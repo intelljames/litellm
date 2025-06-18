@@ -1,0 +1,21 @@
+# config.yaml
+model_list:
+  # Gemini Pro
+  - model_name: gemini-pro-alias # 您在客户端代码中调用的别名
+    litellm_params:
+      model: gemini/gemini-pro
+      api_key: os.environ/GEMINI_API_KEY # 从环境变量读取 API 密钥
+
+  # Gemini 1.5 Pro
+  - model_name: gemini-1.5-pro-alias # 另一个别名
+    litellm_params:
+      model: gemini/gemini-1.5-pro-latest
+      api_key: os.environ/GEMINI_API_KEY
+
+  # Gemini 1.5 Flash
+  - model_name: gemini-1.5-flash-alias # 另一个别名
+    litellm_params:
+      model: gemini/gemini-1.5-flash-latest
+      api_key: os.environ/GEMINI_API_KEY
+
+  # 您可以根据需要添加更多 Google Gemini 模型
