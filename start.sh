@@ -7,4 +7,4 @@ python -m prisma db push
 
 echo "Starting LiteLLM Proxy..."
 # 启动 LiteLLM Proxy
-litellm --config config.yaml --dashboard --host 0.0.0.0 --port $PORT
+litellm --config config.yaml --host 0.0.0.0 --port $PORT
