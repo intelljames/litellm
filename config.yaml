@@ -1,21 +1,51 @@
 # config.yaml
+# 确保此文件位于您的 LiteLLM 仓库的根目录，并已推送到 GitHub
+
 model_list:
-  # Gemini Pro
-  - model_name: gemini-pro-alias # 您在客户端代码中调用的别名
+  # Gemini Pro - 通用文本生成
+  - model_name: gemini-pro-default
     litellm_params:
       model: gemini/gemini-pro
       api_key: os.environ/GEMINI_API_KEY # 从环境变量读取 API 密钥
 
-  # Gemini 1.5 Pro
-  - model_name: gemini-1.5-pro-alias # 另一个别名
+  # Gemini 1.5 Pro - 最新且功能强大，适合复杂任务和长上下文
+  - model_name: gemini-1-5-pro
     litellm_params:
       model: gemini/gemini-1.5-pro-latest
       api_key: os.environ/GEMINI_API_KEY
 
-  # Gemini 1.5 Flash
-  - model_name: gemini-1.5-flash-alias # 另一个别名
+  # Gemini 1.5 Flash - 最新且高效，适合低延迟和高吞吐量任务
+  - model_name: gemini-1-5-flash
     litellm_params:
       model: gemini/gemini-1.5-flash-latest
       api_key: os.environ/GEMINI_API_KEY
 
-  # 您可以根据需要添加更多 Google Gemini 模型
+  # Gemini 2.5 Flash 预览版 - 针对推理、代码和长上下文的改进
+  - model_name: gemini-2-5-flash-preview
+    litellm_params:
+      model: gemini/gemini-2.5-flash-preview-05-20
+      api_key: os.environ/GEMINI_API_KEY
+
+  # Gemini 2.5 Pro 升级预览版 - 目前最智能的模型，即将通用
+  - model_name: gemini-2-5-pro-preview
+    litellm_params:
+      model: gemini/gemini-2.5-pro-preview-06-05
+      api_key: os.environ/GEMINI_API_KEY
+
+  # Gemini 2.5 Flash TTS 预览版 - 支持文本到语音输出
+  - model_name: gemini-2-5-flash-tts
+    litellm_params:
+      model: gemini/gemini-2.5-flash-preview-tts
+      api_key: os.environ/GEMINI_API_KEY
+
+  # Gemini 2.5 Pro TTS 预览版 - 支持文本到语音输出 (更高质量)
+  - model_name: gemini-2-5-pro-tts
+    litellm_params:
+      model: gemini/gemini-2.5-pro-preview-tts
+      api_key: os.environ/GEMINI_API_KEY
+
+  # 如果您还想使用旧版或特定版本，可以参考以下示例：
+  # - model_name: gemini-1-0-pro-001
+  #   litellm_params:
+  #     model: gemini/gemini-1.0-pro-001
+  #     api_key: os.environ/GEMINI_API_KEY
